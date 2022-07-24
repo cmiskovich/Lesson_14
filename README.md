@@ -116,25 +116,9 @@ long_window = 175
 ![Updated SMA](/Updated_SMA_plot.png)
 
 
-The Lesson consists of three technical deliverables:
-
-Preprocess data for a nerual network model.
-
-Use the model-fit-predict patten to complile and evaluate a binary classification model.
-
-Optimize the model.
 
 
 
-First you have to prepare the data for a nerual network model.  You create a data frame using the applicant data csv file.  Then drop EIN and NAME columns from the file since they are not needed for the model.  You then encode the data set's variables using one hot encoder.  After that numerical_variables_df and encoded_df data frames are concatenated to add numberical variables from original data frame to match the one hot encoded data frame.  You then prepare the X and y data frames and run a train_test_split function.  You will then need to scale the data.  Now we are ready to compile and evaluate a binary classification using a neural network.
-
-The first neural network "Original Model Results" used all of the input features and the first hidden layer of 25 nodes and a second hidden layer of 12 nodes and used the "relu" activation.  We then compiled the model using binary crossentropy as the loss, optimizer equal to adam, and metrics equal to accuracy and fit the model using 50 epochs.  The results were 61.25% loss and 73.01% accuracy.  We then created an HDF5 file called AlphabetSoup.hd and saved it in our Resources directory.
-
-The next step was to run an Alternative Model 1 and in this model we used all inputs for number of input features then used only one hidden layer of 58.  The hidden layer we used "relu" as activation and "sigmoid" activation in the output layer.  The results improved, loss decreased to 55.64% and accuracy increased to 73.15%.
-
-Alternative Model 2 I was hoping to increase accuracy by adding more nodes to hidden layer 1 along with adding two addtional hidden layers from Alternative Model 1.  Using "relu" on the three hidden layers and "sigmoid" on the output layer.  Also wanted to increase accuracy by running additional epochs increasing the amount from Alternative Model 1 at 50 to 110 for Alternative Model 2.  Loss was worse slightly going from 55.64% in Alternative Model 1 to 59.27% in Alternative Model 2.  However, accuracy slightly increased from 73.15% in Alternative Model 1 to 73.17% in Alternative Model 2.  
-
-After comparing the two alternative models you then create a HDF5 file and save them to Resources directory for Alternative Model 1 (AlphabetSoup_A1.hd) and for Alternative Model 2 (AlphabetSoup_A2.hd).
 
 
 
@@ -142,91 +126,62 @@ After comparing the two alternative models you then create a HDF5 file and save 
 
 ## Information about datasets
 
-Data frame applicants to be used on a neural network model:
+Data frame for OHLCV dataset:
 
-applicant_data_df
+ohlcv_df
 
-List of categorical variables:
+Filter date index and pct_change function to generate returns from close prices:
 
-categorical_variables
+signals_df
 
-Data sets for OneHotEncoder:
+Assign a copy of the sma_fast and sma_slow columns:
 
-enc
+X
 
-encoded_data
+Create target set for Signal column:
 
-Add numerical variables from original data frame to the one hot encoding dataframe:
+y
 
-numerical_variables_df
+Set training beginning and ending dates, train data, and test data:
 
-attition_df
+training_begin, training_end
 
-Create the X and y datasets:
+X_train, y-train
 
-X, y
+X_test, y_test
 
-Split the dat using train test spilt function:
+Using StandardScaler fit and transform data:
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=1)
+scaler, X_scaler, X_train_scaled, X_test_scaled
 
-Scale the X data:
+Using SVC classifier model, fit, and predict data:
 
-scaler
+svm_model, svm_pred
 
-X_scaler
+Classification report from SVC model predictions:
 
-X_train_scaled
+svm_testing_report
 
-X_test_scaled
+Create a dataframe with predictions, actual returns, and strategy returns:
 
-Create a deep neural network:
+predictions_df
 
-Original dataset using 2 hidden layers:
+Logistic Regression model:
 
-number_input_features
+logistical_regression_model
 
-number_output_neurons
+Fit and predict model:
 
-hidden_nodes_layer1
+model, pred
 
-hidden_nodes_layer2
+Classification report:
 
-Alternative Model 1 using 1 hidden layer:
+test_pred
 
-number_input_features
+Create a dataframe with predictions, actual returns, and strategy returns for Logistic Regression model:
 
-number_output_neurons_A1
+lr_predictions_df
 
-hidden_nodes_layer1_A1
-
-Alternative Model 2 using 3 hidden layers:
-
-number_input_features
-
-number_output_neurons_A2
-
-hidden_nodes_layer1_A2
-
-hidden_nodes_layer2_A2
-
-hidden_nodes_layer3_A2
-
-Create, compile, fit, and evaluate models for neural network:
-
-nn, nn_A1, nn_A2
-
-model, fit_model_A1, fit_model_A2
-
-model_loss, model_accuracy
-
-Create HDF5 files for each dataset:
-
-AlphabetSoup.h5
-
-AlphabetSoup_A1.h5
-
-AlphabetSoup_A2.h5
 
 
 
@@ -237,19 +192,24 @@ AlphabetSoup_A2.h5
 
 pandas
 
+numpy
+
 Path
 
-tensorflow
+hvplot
 
-tensorflow.keras.layers, Dense
+matplotlib
 
-tensorflow.keras.models, Sequential
-
-train_test_split
+svm
 
 StandardScaler
 
-OneHotEncoder
+DateOffset
+
+classification_report
+
+LogisticRegression
+
 
 ---
 
