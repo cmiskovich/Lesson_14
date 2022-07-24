@@ -100,17 +100,16 @@ training_end = X.index.min() + DateOffset(months=24)
 
 
 Set the short window and long window
-short_window = 15
-long_window = 75
+short_window = 25
+long_window = 175
 
-                precision    recall  f1-score   support
+  precision    recall  f1-score   support
 
-        -1.0       0.00      0.00      0.00       448
-         1.0       0.56      1.00      0.72       576
+        -1.0       0.48      0.02      0.03      1155
+         1.0       0.56      0.98      0.71      1458
 
-    accuracy                           0.56      1024
- 
-  
+    accuracy                           0.56      2613
+
 
 
 
