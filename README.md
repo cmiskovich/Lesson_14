@@ -41,11 +41,9 @@ Set the short window and long window:
 short_window = 4
 long_window = 100
 
-Generate the fast and slow simple moving averages (4 and 100 days, respectively):
-signals_df['SMA_Fast'] = signals_df['close'].rolling(window=short_window).mean()
-signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
 
-signals_df = signals_df.dropna()
+
+
 
 
 Originial Training period of 3 months:
@@ -64,6 +62,30 @@ training_end = X.index.min() + DateOffset(months=3)
 
 
 
+
+
+Updated SMA Data:
+
+Select the start of the training period:
+training_begin = X.index.min()
+
+
+Select the ending period for the training data with an offset of 20 months:
+training_end = X.index.min() + DateOffset(months=20)
+
+
+Set the short window and long window
+short_window = 25
+long_window = 100
+
+         precision    recall  f1-score   support
+
+        -1.0       0.53      0.03      0.06      1110
+         1.0       0.56      0.98      0.71      1376
+
+    accuracy                           0.56      2486
+   macro avg       0.54      0.50      0.38      2486
+weighted avg       0.54      0.56      0.42      2486
 
 
 
