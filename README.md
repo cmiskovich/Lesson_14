@@ -64,7 +64,7 @@ training_end = X.index.min() + DateOffset(months=3)
    
 
 
-[Originial SMA](/Original_SMA_plot.png)
+![Originial SMA](/Original_SMA_plot.png)
 
 
 
@@ -97,7 +97,7 @@ long_window = 100
 
 
 
-[Updated SMA](/Updated_SMA_plot.png)
+![Updated SMA](/Updated_SMA_plot.png)
 
 The Lesson consists of three technical deliverables:
 
