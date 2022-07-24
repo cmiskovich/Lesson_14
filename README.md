@@ -1,7 +1,7 @@
 # Lesson_14
 # Primary application file
 
-Produce a jupyter lab file to predict whether Alphabet Soup funding applicants will be succesful you will create a binary classification model using a deep nerual network.
+Produce a jupyter lab file that will combine algorithmic trading skills with existing skills in financial Python programming and machine learning to create an algorithmic trading bot that learns and adapts to new data and evolving markets.
 
 
 ---
@@ -34,6 +34,47 @@ Jupyter Lab
 ---
 
 ## General information about analysis.
+
+Original SMA data:
+
+# Set the short window and long window
+short_window = 4
+long_window = 100
+
+# Generate the fast and slow simple moving averages (4 and 100 days, respectively)
+signals_df['SMA_Fast'] = signals_df['close'].rolling(window=short_window).mean()
+signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
+
+signals_df = signals_df.dropna()
+
+# Review the DataFrame
+display(signals_df.head())
+display(signals_df.tail())
+
+Originial Training period of 3 months:
+
+# Select the start of the training period
+training_begin = X.index.min()
+
+# Display the training begin date
+print(training_begin)
+
+
+# Select the ending period for the training data with an offset of 3 months
+training_end = X.index.min() + DateOffset(months=3)
+
+# Display the training end date
+print(training_end)
+
+
+
+
+
+
+
+
+
+
 
 The Lesson consists of three technical deliverables:
 
