@@ -103,7 +103,7 @@ Set the short window and long window
 short_window = 25
 long_window = 175
 
-  precision    recall  f1-score   support
+                precision    recall  f1-score   support
 
         -1.0       0.48      0.02      0.03      1155
          1.0       0.56      0.98      0.71      1458
