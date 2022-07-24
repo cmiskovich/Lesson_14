@@ -55,6 +55,16 @@ training_begin = X.index.min()
 Select the ending period for the training data with an offset of 3 months:
 training_end = X.index.min() + DateOffset(months=3)
 
+                precision    recall  f1-score   support
+
+        -1.0       0.43      0.04      0.07      1804
+         1.0       0.56      0.96      0.71      2288
+
+    accuracy                           0.55      4092
+   macro avg       0.49      0.50      0.39      4092
+weighted avg       0.50      0.55      0.43      4092
+
+
 
 
 
@@ -78,7 +88,7 @@ Set the short window and long window
 short_window = 25
 long_window = 100
 
-         precision    recall  f1-score   support
+                precision    recall  f1-score   support
 
         -1.0       0.53      0.03      0.06      1110
          1.0       0.56      0.98      0.71      1376
