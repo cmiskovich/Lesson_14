@@ -34,6 +34,9 @@ Jupyter Lab
 ---
 
 ## General information about analysis.
+Below is the original SMA data that is establishing a baseline performance for the trading algorithm.  This was done by importing the OHLCV dataset into a Pandas data frame.  Generating trading signals using short and lond SMA values.  Splitting the data into training and testing datasets.  Use the SVC classifier to fit the training data and make predictions based on the testing data.  Review the classification report.  Then create predictions for predicted, Actual Returns, and Strategy Returns.  Then plot the cumulative return comparing Actual and Strategy Returns.
+
+Below is the classification report and plot for the baseline performance.
 
 Original SMA data:
 
@@ -68,6 +71,10 @@ training_end = X.index.min() + DateOffset(months=3)
 
 
 
+The baseline performance had precision of 43% and a recall of 4% for the -1.0 class and precision of 56% and 96% for the 1.0 class with an overall accuracy of 55%.
+
+
+
 
 
 Backtest original data with Logistic Regression:
@@ -81,6 +88,9 @@ Backtest original data with Logistic Regression:
     
     
   ![Originial LR](/Original_withLR.png)
+  
+  
+  The Backtest data with Logistic Regression had increases for precision and recall for the -1.0 class and the precision was the same for 1.0 class the recall decreased for the 1.0 class.  The overall accuracy also decreased after using Logistic Regression.
 
 
 
@@ -114,6 +124,19 @@ long_window = 175
 
 
 ![Updated SMA](/Updated_SMA_plot.png)
+
+
+
+What impact resulted from increasing the training window and both of the SMA windows?
+
+After increasing the short and long window in the SMA data along with increasing the number of months of testing.  The precision for -1.0 class and recall for the 1.0 class increased.  The precision for 1.0 class was the same and the recall for -1.0 class decreased slightly.  However, the accuracy increased by 1%.  Accuracy was expected to increase since we used for months for training data and more data usually helps with accuracy.
+
+
+On the baseline and Logistic Regression models have a big gap in Strategy and Actual Results.  The adjusted model in 2019 runs with expected results and stays close until late 2020.  All three models missed on the large increase in late 2020 and early 2021 they all predicted a downward trend for the strategy returns and the actual returns increased significantly.
+
+
+
+
 
 
 
