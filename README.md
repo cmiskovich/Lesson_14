@@ -79,7 +79,7 @@ Backtest original data with Logistic Regression:
 
     accuracy                           0.52      4092
    macro avg       0.50      0.50      0.49      4092
-weighted avg       0.51      0.52      0.51      4092
+w
 
 
 
