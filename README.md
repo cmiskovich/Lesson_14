@@ -91,6 +91,8 @@ Backtest original data with Logistic Regression:
   
   
   The Backtest data with Logistic Regression had increases for precision and recall for the -1.0 class and the precision was the same for 1.0 class the recall decreased for the 1.0 class.  The overall accuracy also decreased after using Logistic Regression.
+  
+  Data for baseline and Logistic Regression models are saved to the file: machine_learing_training_bot.ipynb
 
 
 
@@ -135,14 +137,7 @@ After increasing the short and long window in the SMA data along with increasing
 On the baseline and Logistic Regression models have a big gap in Strategy and Actual Results.  The adjusted model in 2019 runs with expected results and stays close until late 2020.  All three models missed on the large increase in late 2020 and early 2021 they all predicted a downward trend for the strategy returns and the actual returns increased significantly.
 
 
-
-
-
-
-
-
-
-
+Data for adjusted amounts are saved as file: adjusted_machine_learing_training_bot.ipynb
 
 
 ---
