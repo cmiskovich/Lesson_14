@@ -37,34 +37,27 @@ Jupyter Lab
 
 Original SMA data:
 
-# Set the short window and long window
+Set the short window and long window:
 short_window = 4
 long_window = 100
 
-# Generate the fast and slow simple moving averages (4 and 100 days, respectively)
+Generate the fast and slow simple moving averages (4 and 100 days, respectively):
 signals_df['SMA_Fast'] = signals_df['close'].rolling(window=short_window).mean()
 signals_df['SMA_Slow'] = signals_df['close'].rolling(window=long_window).mean()
 
 signals_df = signals_df.dropna()
 
-# Review the DataFrame
-display(signals_df.head())
-display(signals_df.tail())
 
 Originial Training period of 3 months:
 
-# Select the start of the training period
+Select the start of the training period
 training_begin = X.index.min()
 
-# Display the training begin date
-print(training_begin)
 
-
-# Select the ending period for the training data with an offset of 3 months
+Select the ending period for the training data with an offset of 3 months:
 training_end = X.index.min() + DateOffset(months=3)
 
-# Display the training end date
-print(training_end)
+
 
 
 
