@@ -70,6 +70,20 @@ training_end = X.index.min() + DateOffset(months=3)
 
 
 
+Backtest original data with Logistic Regression:
+
+                precision    recall  f1-score   support
+
+        -1.0       0.44      0.33      0.38      1804
+         1.0       0.56      0.66      0.61      2288
+
+    accuracy                           0.52      4092
+   macro avg       0.50      0.50      0.49      4092
+weighted avg       0.51      0.52      0.51      4092
+
+
+
+
 
 
 
@@ -79,20 +93,21 @@ Select the start of the training period:
 training_begin = X.index.min()
 
 
-Select the ending period for the training data with an offset of 20 months:
+Select the ending period for the training data with an offset of 24 months:
 training_end = X.index.min() + DateOffset(months=20)
 
 
 Set the short window and long window
-short_window = 25
+short_window = 50
 long_window = 100
 
                 precision    recall  f1-score   support
 
-        -1.0       0.53      0.03      0.06      1110
-         1.0       0.56      0.98      0.71      1376
+        -1.0       0.00      0.00      0.00       448
+         1.0       0.56      1.00      0.72       576
 
-    accuracy                           0.56      2486
+    accuracy                           0.56      1024
+ 
   
 
 
