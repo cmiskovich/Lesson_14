@@ -93,12 +93,12 @@ training_begin = X.index.min()
 
 
 Select the ending period for the training data with an offset of 24 months:
-training_end = X.index.min() + DateOffset(months=20)
+training_end = X.index.min() + DateOffset(months=24)
 
 
 Set the short window and long window
-short_window = 50
-long_window = 100
+short_window = 15
+long_window = 75
 
                 precision    recall  f1-score   support
 
