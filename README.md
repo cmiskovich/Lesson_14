@@ -61,8 +61,7 @@ training_end = X.index.min() + DateOffset(months=3)
          1.0       0.56      0.96      0.71      2288
 
     accuracy                           0.55      4092
-   macro avg       0.49      0.50      0.39      4092
-weighted avg       0.50      0.55      0.43      4092
+   
 
 
 
@@ -94,8 +93,7 @@ long_window = 100
          1.0       0.56      0.98      0.71      1376
 
     accuracy                           0.56      2486
-   macro avg       0.54      0.50      0.38      2486
-weighted avg       0.54      0.56      0.42      2486
+  
 
 
 
