@@ -34,7 +34,7 @@ Jupyter Lab
 ---
 
 ## General information about analysis.
-Below is the original SMA data that is establishing a baseline performance for the trading algorithm.  This was done by importing the OHLCV dataset into a Pandas data frame.  Generating trading signals using short and lond SMA values.  Splitting the data into training and testing datasets.  Use the SVC classifier to fit the training data and make predictions based on the testing data.  Review the classification report.  Then create predictions for predicted, Actual Returns, and Strategy Returns.  Then plot the cumulative return comparing Actual and Strategy Returns.
+Below is the original SMA data that is establishing a baseline performance for the trading algorithm.  This was done by importing the OHLCV dataset into a Pandas data frame.  Generating trading signals using short and long SMA values.  Splitting the data into training and testing datasets.  Use the SVC classifier to fit the training data and make predictions based on the testing data.  Review the classification report.  Then create predictions for predicted, Actual Returns, and Strategy Returns.  Then plot the cumulative return comparing Actual and Strategy Returns.
 
 Below is the classification report and plot for the baseline performance.
 
