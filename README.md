@@ -115,6 +115,7 @@ long_window = 175
 
 ![Updated SMA](/Updated_SMA_plot.png)
 
+
 The Lesson consists of three technical deliverables:
 
 Preprocess data for a nerual network model.
